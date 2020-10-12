@@ -11,7 +11,7 @@ import android.graphics.Color
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.carbooking.driver.R
-import com.example.common.model.UserModel
+import com.carbooking.driver.model.UserModel
 
 object Common {
     fun buildWelcomeMessage(): String {

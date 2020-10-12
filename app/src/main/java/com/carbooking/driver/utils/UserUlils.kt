@@ -1,10 +1,9 @@
-package com.example.common.utils
+package com.carbooking.driver.utils
 
 import android.content.Context
 import android.view.View
 import android.widget.Toast
-import com.example.common.Common
-import com.example.common.model.TokenModel
+import com.carbooking.driver.model.TokenModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase

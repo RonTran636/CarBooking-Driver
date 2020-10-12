@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "1032409855974",
+    "firebase_url": "https://carbookingdemo-f87a0.firebaseio.com",
+    "project_id": "carbookingdemo-f87a0",
+    "storage_bucket": "carbookingdemo-f87a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032409855974:android:1e127243098caf9a2c4827",
+        "android_client_info": {
+          "package_name": "com.carbooking.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032409855974-t12dnl525fij2moekle4vicsgm3dbhru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carbooking.driver",
+            "certificate_hash": "25c2e3a7d4c1db12500998b748e47a37682d1c8b"
+          }
+        },
+        {
+          "client_id": "1032409855974-gaiiq41uipgdsogmr6r4mp6huh2p3pgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD90lc-_T6hMEtXx4JTs1D6p9r5DYjXIgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032409855974-gaiiq41uipgdsogmr6r4mp6huh2p3pgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032409855974:android:85900dda3edced7c2c4827",
+        "android_client_info": {
+          "package_name": "com.example.carbookingdemo.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032409855974-v9im1irr3ig5gp03rljesq780t1l946u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carbookingdemo.driver",
+            "certificate_hash": "25c2e3a7d4c1db12500998b748e47a37682d1c8b"
+          }
+        },
+        {
+          "client_id": "1032409855974-gaiiq41uipgdsogmr6r4mp6huh2p3pgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD90lc-_T6hMEtXx4JTs1D6p9r5DYjXIgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032409855974-gaiiq41uipgdsogmr6r4mp6huh2p3pgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

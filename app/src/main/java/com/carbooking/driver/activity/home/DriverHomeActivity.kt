@@ -18,8 +18,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.carbooking.driver.R
 import com.carbooking.driver.utils.Common
 import com.carbooking.driver.activity.login.LoginSplashActivity
-import com.example.common.utils.getProgressDrawable
-import com.example.common.utils.loadImage
+import com.carbooking.driver.utils.getProgressDrawable
+import com.carbooking.driver.utils.loadImage
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar

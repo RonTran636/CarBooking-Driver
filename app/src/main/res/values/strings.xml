@@ -1,16 +1,17 @@
 <resources>
-    <string name="app_name" translatable="false">DriverCarBookingDemo</string>
-    <string name="facebook_app_id" translatable="false">958448244632606</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb958448244632606</string>
-    <string name="facebook_application_id" translatable="false">958448244632606</string>
+    <string name="app_name" translatable="false">UP</string>
     <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->
-    <string name="facebook_login_protocol_scheme" translatable="false">fb958448244632606</string>
+    <string name="facebook_app_id" translatable="false">4644842785558191</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb4644842785558191</string>
+    <string name="facebook_application_id" translatable="false">4644842785558191</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb4644842785558191</string>
+
     <string name="message_phone_number_invalid">Invalid phone number</string>
     <string name="error_field_empty">%1s can\'t be empty</string>
     <string name="error_invalid_password">Password is too weak</string>
-    <string name="message_sign_up_sucessful">Sign in successful</string>
+    <string name="message_sign_up_successful">Sign in successful</string>
     <string name="message_permission_denied">
-        <![CDATA[<![CDATA[If you reject permission,you can not use this service  Please turn on permissions at [Setting] > [Permission]]]]]></string>
+        If you reject permission,you can not use this service  Please turn on permissions at [Setting] > [Permission]</string>
     <string name="message_verification">Enter your mobile number.</string>
     <string name="phone_number">Phone Number</string>
     <string name="message_other_method_login">Or connect with social network</string>
@@ -57,4 +58,7 @@
     <string name="second_slide_title">Ride easy with real time trip update</string>
     <string name="first_slide_header">Your destination is at your fingerprint. Just open the app and enter you want to go, and a nearby driver will help you get there reliably</string>
     <string name="second_slide_header">For a better experience, we need permission to your location. Please provide push notification when prompted</string>
+    <string name="rationale_title">Permission required</string>
+    <string name="rationale_message">
+        <![CDATA[We need permission to access your Location]]></string>
 </resources>

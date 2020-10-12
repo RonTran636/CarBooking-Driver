@@ -14,8 +14,8 @@ import com.carbooking.driver.activity.home.DriverHomeActivity
 import com.carbooking.driver.databinding.ActivitySignUpBinding
 import com.carbooking.driver.utils.Common
 import com.carbooking.driver.activity.login.LoginActivity
-import com.example.common.model.UserModel
-import com.example.common.utils.HashUtils
+import com.carbooking.driver.model.UserModel
+import com.carbooking.driver.utils.HashUtils
 import com.facebook.login.LoginManager
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -102,7 +102,7 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this@SignUpActivity,"${e.message}",Toast.LENGTH_SHORT).show()
                 }
                 .addOnCompleteListener{
-                    Toast.makeText(this@SignUpActivity,getString(R.string.message_sign_up_sucessful),Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignUpActivity,getString(R.string.message_sign_up_successful),Toast.LENGTH_SHORT).show()
                     Common.currentUser = model
                     startActivity(Intent(this, DriverHomeActivity::class.java))
                     finish()

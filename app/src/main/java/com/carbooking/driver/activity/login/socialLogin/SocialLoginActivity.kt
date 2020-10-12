@@ -16,7 +16,7 @@ import com.carbooking.driver.activity.home.DriverHomeActivity
 import com.carbooking.driver.activity.login.signup.SignUpActivity
 import com.carbooking.driver.databinding.ActivitySocialLoginBinding
 import com.carbooking.driver.utils.Common
-import com.example.common.model.UserModel
+import com.carbooking.driver.model.UserModel
 import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult

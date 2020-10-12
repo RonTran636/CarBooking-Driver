@@ -1,4 +1,4 @@
-package com.example.common.utils
+package com.carbooking.driver.utils
 
 import java.security.MessageDigest
 

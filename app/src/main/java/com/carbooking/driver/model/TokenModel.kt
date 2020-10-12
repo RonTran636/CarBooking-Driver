@@ -1,4 +1,4 @@
-package com.example.common.model
+package com.carbooking.driver.model
 
 class TokenModel {
     var token :String = ""

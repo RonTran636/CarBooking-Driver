@@ -1,4 +1,4 @@
-package com.example.common.adapter
+package com.carbooking.driver.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
-import com.example.common.R
+import com.carbooking.driver.R
 
 
 class SliderAdapter(val context: Context) :PagerAdapter() {
@@ -23,7 +23,7 @@ class SliderAdapter(val context: Context) :PagerAdapter() {
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val view = LayoutInflater.from(context).inflate(R.layout.layout_slides,container,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.content_sliders,container,false)
         val imageView= view.findViewById<ImageView>(R.id.slider_image)
         val headerView = view.findViewById<TextView>(R.id.slider_header)
         val descriptionView = view.findViewById<TextView>(R.id.slider_description)

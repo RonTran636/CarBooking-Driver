@@ -3,9 +3,9 @@
     <string name="message_phone_number_invalid">Số điện thoại không chính xác</string>
     <string name="error_field_empty">%1s không được để trống</string>
     <string name="error_invalid_password">Mật khẩu quá yếu</string>
-    <string name="message_sign_up_sucessful">Đăng nhập thành công</string>
+    <string name="message_sign_up_successful">Đăng nhập thành công</string>
     <string name="message_permission_denied">
-        <![CDATA[<![CDATA[Bạn sẽ không thể sử dụng ứng dụng nếu không cấp quyền truy cập Vui lòng mở quyền truy cập tại [Setting] > [Permission]]]]]></string>
+        Bạn sẽ không thể sử dụng ứng dụng nếu không cấp quyền truy cập Vui lòng mở quyền truy cập tại [Setting] > [Permission]</string>
     <string name="message_verification">Nhập số điện thoại.</string>
     <string name="phone_number">Số điện thoại</string>
     <string name="message_other_method_login">Hoặc kết nối với mạng xã hội.</string>
@@ -40,4 +40,7 @@
     <string name="first_slide_header">Di chuyển chưa bao giờ dễ dàng hơn. Chỉ cần mở ứng dụng và nhập nơi bạn muốn đến và tài xế gần đó sẽ giúp bạn đến đó một cách đáng tin cậy</string>
     <string name="second_slide_title">Di chuyển dễ dàng hơn với cập nhật theo thời gian thực</string>
     <string name="second_slide_header">Để có thể có trải nghiệm tốt nhất, xin vui lòng đồng ý cung cấp vị trí khi được yêu cầu</string>
+    <string name="rationale_title">Permission required</string>
+    <string name="rationale_message">
+        <![CDATA[We need permission to access your Location]]></string>
 </resources>

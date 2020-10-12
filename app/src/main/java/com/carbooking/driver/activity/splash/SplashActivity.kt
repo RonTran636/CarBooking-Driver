@@ -13,8 +13,8 @@ import com.carbooking.driver.activity.onboarding.OnBoardingActivity
 import com.carbooking.driver.databinding.ActivitySplashBinding
 import com.carbooking.driver.utils.Common
 import com.carbooking.driver.activity.home.DriverHomeActivity
-import com.example.common.model.UserModel
-import com.example.common.utils.UserUtils
+import com.carbooking.driver.model.UserModel
+import com.carbooking.driver.utils.UserUtils
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -39,19 +39,16 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         MobileAds.initialize(this) { }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
-//        revealBlack(binding.container, binding.logoImage)
-//        checkPermissions()
-        init()
+        delaySplashScreen()
     }
 
 
     override fun onStart() {
         super.onStart()
-        auth.addAuthStateListener(listener)
-        delaySplashScreen()
     }
 
     private fun checkUserFromFirebase() {
+        auth.addAuthStateListener(listener)
         userInfoRef
             .child(auth.currentUser!!.uid)
             .addListenerForSingleValueEvent(object : ValueEventListener {
@@ -62,7 +59,6 @@ class SplashActivity : AppCompatActivity() {
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                 }
-
                 override fun onCancelled(error: DatabaseError) {
                     Log.e(TAG, "onCancelled: ${error.message}")
                 }
@@ -71,7 +67,9 @@ class SplashActivity : AppCompatActivity() {
 
 
     private fun delaySplashScreen() {
-        handler.postDelayed({}, 500)
+        handler.postDelayed({
+            init()
+        }, 1000)
     }
 
     private fun init() {
@@ -81,13 +79,13 @@ class SplashActivity : AppCompatActivity() {
         listener = FirebaseAuth.AuthStateListener {
             if (auth.currentUser != null) {
                 //User Logged in - Move to HomeActivity
-                checkUserFromFirebase()
                 FirebaseInstanceId.getInstance()
                     .instanceId
                     .addOnFailureListener { e -> Toast.makeText(this, e.message, Toast.LENGTH_LONG).show() }
                     .addOnSuccessListener { instanceIdResult ->
                         UserUtils.updateToken(this@SplashActivity, instanceIdResult.token)
                     }
+                checkUserFromFirebase()
             } else {
                 //New user detected - Move to LoginActivity
                 startActivity(Intent(this@SplashActivity, OnBoardingActivity::class.java))

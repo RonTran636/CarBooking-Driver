@@ -1,4 +1,4 @@
-package com.example.common.activity.ui.slideshow
+package com.carbooking.driver.activity.home.ui.slideshow
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.common.R
+import com.carbooking.driver.R
+import com.example.common.activity.ui.slideshow.SlideshowViewModel
 
 class SlideshowFragment : Fragment() {
 

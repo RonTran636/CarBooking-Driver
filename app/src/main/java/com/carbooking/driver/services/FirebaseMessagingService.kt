@@ -1,7 +1,7 @@
 package com.carbooking.driver.services
 
 import com.carbooking.driver.utils.Common
-import com.example.common.utils.UserUtils
+import com.carbooking.driver.utils.UserUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
