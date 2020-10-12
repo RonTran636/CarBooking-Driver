@@ -8,9 +8,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
 import com.carbooking.driver.R
 import com.carbooking.driver.activity.home.DriverHomeActivity
@@ -24,6 +26,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.iid.FirebaseInstanceId
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
@@ -45,6 +48,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         MobileAds.initialize(this) { }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
+        ViewCompat.setOnApplyWindowInsetsListener(containerRoot) { _, insets ->
+            val menuLayoutParams = containerRoot.layoutParams as ViewGroup.MarginLayoutParams
+            menuLayoutParams.setMargins(0, 0, 0, 0)
+            containerRoot.layoutParams = menuLayoutParams
+            insets.consumeSystemWindowInsets()
+        }
         init()
     }
 

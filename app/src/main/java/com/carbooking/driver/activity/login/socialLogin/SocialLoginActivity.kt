@@ -108,12 +108,7 @@ class SocialLoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = auth.currentUser!!
-                    val email = user.email
-                    Log.d(TAG, "handleFacebookAccessToken: current user email : $email")
-                    userInfoRef.child(user.uid)
-                        .orderByChild("email")
-                        .equalTo(email)
+                    userInfoRef.child(FirebaseAuth.getInstance().currentUser!!.uid)
                         .addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 if (snapshot.value != null) {

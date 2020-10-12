@@ -319,4 +319,6 @@
     <color name="idle_dot">#662D9CDB</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <color name="appBackground">#e2e0f8</color>
 </resources>

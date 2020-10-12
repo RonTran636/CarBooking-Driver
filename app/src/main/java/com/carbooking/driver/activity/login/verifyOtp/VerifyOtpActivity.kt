@@ -96,7 +96,6 @@ class VerifyOtpActivity : AppCompatActivity() {
                 tvOTPResend.isClickable = true
                 //Handle Skip Button
                 userInfoRef.child(auth.uid!!)
-                    .orderByChild("phoneNumber").equalTo(phoneNumber)
                     .addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
                             if (snapshot.value != null) {
@@ -166,7 +165,6 @@ class VerifyOtpActivity : AppCompatActivity() {
             object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                 override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                     val codeReceived = credential.smsCode
-                    Log.d(TAG, "onVerificationCompleted: code is $codeReceived")
                     if (codeReceived != null) {
                         binding.pinView.setText(codeReceived.toString())
                         verifySignInCode(codeReceived)
@@ -205,8 +203,6 @@ class VerifyOtpActivity : AppCompatActivity() {
                 when {
                     task.isSuccessful -> {
                         userInfoRef.child(auth.uid!!)
-                            .child("phoneNumber")
-                            .equalTo(phoneNumber)
                             .addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onDataChange(snapshot: DataSnapshot) {
                                     if (snapshot.value != null) {
