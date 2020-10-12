@@ -109,8 +109,8 @@ class DriverHomeActivity : AppCompatActivity() {
         val tvStar = headerView.findViewById<View>(R.id.tv_star) as TextView
 
         tvName.text = Common.buildWelcomeMessage()
-        tvPhoneNumber.text = Common.currentUser!!.phoneNumber
-        tvStar.text = StringBuilder().append(Common.currentUser!!.rating)
+        tvPhoneNumber.text = Common.currentDriver!!.phoneNumber
+        tvStar.text = StringBuilder().append(Common.currentDriver!!.rating)
 //        img_avatar.loadImage(Common.currentUser!!.photoUrl, getProgressDrawable(img_avatar.context))
 
     }

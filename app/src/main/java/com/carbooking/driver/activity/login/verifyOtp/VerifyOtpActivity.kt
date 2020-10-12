@@ -64,7 +64,7 @@ class VerifyOtpActivity : AppCompatActivity() {
         phoneNumber = intent.getStringExtra("phoneNumber").toString()
         //Initialize Firebase
         auth = Firebase.auth
-        userInfoRef = Firebase.database.reference.child(Common.DRIVER_INFO_REFERENCE)
+        userInfoRef = Firebase.database.reference.child(Common.DRIVERS).child(Common.DRIVER_INFO_REFERENCE)
 
         //Send Verification code for the first time
         sendVerificationCode(phoneNumber)

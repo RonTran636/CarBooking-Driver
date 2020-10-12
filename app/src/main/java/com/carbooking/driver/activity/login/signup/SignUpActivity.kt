@@ -14,7 +14,7 @@ import com.carbooking.driver.activity.home.DriverHomeActivity
 import com.carbooking.driver.databinding.ActivitySignUpBinding
 import com.carbooking.driver.utils.Common
 import com.carbooking.driver.activity.login.LoginActivity
-import com.carbooking.driver.model.UserModel
+import com.carbooking.driver.model.DriverModel
 import com.carbooking.driver.utils.HashUtils
 import com.facebook.login.LoginManager
 import com.google.android.material.textfield.TextInputLayout
@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
@@ -41,7 +41,7 @@ class SignUpActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
         binding.lifecycleOwner = this
         binding.etNewUserName.requestFocus()
-        userInfoRef = FirebaseDatabase.getInstance().getReference(Common.DRIVER_INFO_REFERENCE)
+        userInfoRef = Firebase.database.reference.child(Common.DRIVERS).child(Common.DRIVER_INFO_REFERENCE)
         auth = Firebase.auth
         user = auth.currentUser!!
 
@@ -65,7 +65,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun signUp(){
-        val model = UserModel()
+        val model = DriverModel()
         model.fullName = binding.etNewUserName.text.toString()
         model.email = binding.etNewUserEmail.text.toString()
         model.password = binding.etNewUserPassword.text.toString()
@@ -103,7 +103,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
                 .addOnCompleteListener{
                     Toast.makeText(this@SignUpActivity,getString(R.string.message_sign_up_successful),Toast.LENGTH_SHORT).show()
-                    Common.currentUser = model
+                    Common.currentDriver = model
                     startActivity(Intent(this, DriverHomeActivity::class.java))
                     finish()
                 }

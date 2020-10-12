@@ -16,7 +16,7 @@ import com.carbooking.driver.activity.home.DriverHomeActivity
 import com.carbooking.driver.activity.login.signup.SignUpActivity
 import com.carbooking.driver.databinding.ActivitySocialLoginBinding
 import com.carbooking.driver.utils.Common
-import com.carbooking.driver.model.UserModel
+import com.carbooking.driver.model.DriverModel
 import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
@@ -31,6 +31,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.BuildConfig
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 
@@ -63,7 +64,7 @@ class SocialLoginActivity : AppCompatActivity() {
 
         //[Set up Firebase environment]
         auth = Firebase.auth
-        userInfoRef = FirebaseDatabase.getInstance().getReference(Common.DRIVER_INFO_REFERENCE)
+        userInfoRef = Firebase.database.reference.child(Common.DRIVERS).child(Common.DRIVER_INFO_REFERENCE)
         callbackManager = CallbackManager.Factory.create()
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -113,8 +114,8 @@ class SocialLoginActivity : AppCompatActivity() {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 if (snapshot.value != null) {
                                     //User are registered, to the main activity
-                                    Common.currentUser = snapshot.getValue(UserModel::class.java)
-                                    Log.d(TAG, "onDataChange: ${Common.currentUser!!.photoUrl}")
+                                    Common.currentDriver = snapshot.getValue(DriverModel::class.java)
+                                    Log.d(TAG, "onDataChange: ${Common.currentDriver!!.photoUrl}")
                                     Log.d(TAG, "onDataChange: ${snapshot.value}")
                                     startActivity(Intent(this@SocialLoginActivity, DriverHomeActivity::class.java))
                                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)

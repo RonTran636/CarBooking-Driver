@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.carbooking.driver.R
 import com.carbooking.driver.activity.home.DriverHomeActivity
 import com.carbooking.driver.databinding.ActivityReLoginBinding
+import com.carbooking.driver.utils.Common
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -19,7 +20,7 @@ import com.google.firebase.ktx.Firebase
 
 class ReLoginActivity : AppCompatActivity() {
 
-    private lateinit var rootRef : DatabaseReference
+    private lateinit var userInfoRef : DatabaseReference
     private lateinit var binding: ActivityReLoginBinding
     companion object{
         private const val TAG = "ReLoginActivity"
@@ -29,12 +30,11 @@ class ReLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_re_login)
         binding.etConfirmPassword.requestFocus()
-        val phoneNumber :String = intent.getStringExtra("phoneNumber")!!
-        rootRef = Firebase.database.reference.child("user").child(phoneNumber)
+        userInfoRef = Firebase.database.reference.child(Common.DRIVERS).child(Common.DRIVER_INFO_REFERENCE)
         binding.btnReLogin.setOnClickListener {
             val confirmPassword = binding.etConfirmPassword.text.toString().trim()
             Log.d(TAG, "onCreate: Confirm Password entered is $confirmPassword")
-            rootRef.addListenerForSingleValueEvent(object :
+            userInfoRef.addListenerForSingleValueEvent(object :
                 ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val passCode = snapshot.child("password").value.toString().trim()

@@ -24,6 +24,7 @@ import com.carbooking.driver.R
 import com.carbooking.driver.activity.login.socialLogin.SocialLoginActivity
 import com.carbooking.driver.activity.login.verifyOtp.VerifyOtpActivity
 import com.carbooking.driver.databinding.ActivityLoginBinding
+import com.carbooking.driver.utils.Common
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -62,7 +63,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         // [START initialize_auth]
         // Initialize Firebase Auth
         auth = Firebase.auth
-        rootRef = Firebase.database.reference.child("user")
+        rootRef = Firebase.database.reference.child(Common.DRIVERS).child(Common.DRIVER_INFO_REFERENCE)
         // [END initialize_auth]
 
         // [Start assign country code click listener]

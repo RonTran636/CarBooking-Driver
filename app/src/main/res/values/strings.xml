@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">UP</string>
+    <string name="app_name" translatable="false">UP Driver</string>
     <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->
     <string name="facebook_app_id" translatable="false">4644842785558191</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb4644842785558191</string>

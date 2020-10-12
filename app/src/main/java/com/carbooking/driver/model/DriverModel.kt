@@ -1,7 +1,7 @@
 package com.carbooking.driver.model
 
 
-class UserModel {
+class DriverModel {
     var fullName: String = ""
     var email: String = ""
     var phoneNumber: String = ""

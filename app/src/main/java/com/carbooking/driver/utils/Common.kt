@@ -11,13 +11,13 @@ import android.graphics.Color
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.carbooking.driver.R
-import com.carbooking.driver.model.UserModel
+import com.carbooking.driver.model.DriverModel
 
 object Common {
     fun buildWelcomeMessage(): String {
         return StringBuilder("Welcome")
             .append(" ")
-            .append(currentUser!!.fullName)
+            .append(currentDriver!!.fullName)
             .toString()
     }
 
@@ -54,11 +54,15 @@ object Common {
             notificationManager.notify(id,notification)
         }
     }
+    const val DRIVERS = "Drivers"
+    const val DRIVERS_LOCATION_REFERENCE :String = "DriversLocation"
+    const val DRIVER_INFO_REFERENCE :String = "DriversInfo"
+    const val TOKEN_REFERENCE: String = "DriversToken"
+
     const val NOTIFICATION_CHANNEL_ID = "private_channel"
     const val NOTI_BODY:String = "Body"
     const val NOTI_TITLE: String = "Title"
-    const val TOKEN_REFERENCE: String = "DriversToken"
-    var currentUser : UserModel? = null
-    const val DRIVERS_LOCATION_REFERENCE :String = "DriversLocation"
-    const val DRIVER_INFO_REFERENCE :String = "DriversInfo"
+
+    var currentDriver : DriverModel? = null
+
 }
