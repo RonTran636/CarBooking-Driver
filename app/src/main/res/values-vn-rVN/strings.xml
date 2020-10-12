@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_phone_number_invalid">Số điện thoại không chính xác</string>
+    <string name="error_field_empty">%1s không được để trống</string>
+    <string name="error_invalid_password">Mật khẩu quá yếu</string>
+    <string name="message_sign_up_sucessful">Đăng nhập thành công</string>
+    <string name="message_permission_denied">
+        <![CDATA[<![CDATA[Bạn sẽ không thể sử dụng ứng dụng nếu không cấp quyền truy cập Vui lòng mở quyền truy cập tại [Setting] > [Permission]]]]]></string>
+    <string name="message_verification">Nhập số điện thoại.</string>
+    <string name="phone_number">Số điện thoại</string>
+    <string name="message_other_method_login">Hoặc kết nối với mạng xã hội.</string>
+    <string name="message_data_charge">Nếu tiếp tục, bạn sẽ nhận được tin nhắn SMS để xác minh. Có thể áp dụng phí tin nhắn và dữ liệu
+    </string>
+    <string name="message_internet_connection">Hãy bật kết nối với wi-fi hoặc mạng di động</string>
+    <string name="select_country_code">Chọn quốc gia</string>
+    <string name="australia">Australia</string>
+    <string name="singapore">Singapore</string>
+    <string name="south_korea">Hàn Quốc</string>
+    <string name="vietnam">Việt Nam</string>
+    <string name="message_welcome">Di chuyển cùng Uber</string>
+    <string name="message_enter_phone_number">0912 345 678</string>
+    <string name="message_welcome_back">Chào mừng quay lại, vui lòng nhập mật khẩu để tiếp tực</string>
+    <string name="message_cant_login">Tôi không đăng nhập được</string>
+    <string name="message_confirm_information">Please confirm your information</string>
+    <string name="first_name">Tên</string>
+    <string name="last_name">Họ</string>
+    <string name="message_accept_term">Bằng việc tiếp tục, tôi xác nhận đồng ý với Điều khoản &amp; Điều kiện và Chính sách quyền riêng tư</string>
+    <string name="choose_an_account">Choose an account</string>
+    <string name="message_social_charge">Nếu nhấp vào tùy chọn phương tiện truyền thông xã hội, bạn sẽ nhận được tin nhắn SMS để xác minh. Có thể áp dụng phí tin nhắn và dữ liệu.
+    </string>
+    <string name="tv_skip">Bỏ qua</string>
+    <string name="message_change_phone_number">Thay đổi số điện thoại</string>
+    <string name="message_otp_error">Không nhận được mã?</string>
+    <string name="title_verify">Nhập mã xác mình gồm 6 chữ số đã gửi về số điện thoại %1s</string>
+    <string name="message_verify_invalid">>Mã xác thực không chính xác</string>
+    <string name="full_name">Nhập họ và tên</string>
+    <string name="menu_exit">Đăng xuất</string>
+    <string name="confirm_exit">Do you really want to sign out?</string>
+    <string name="first_slide_title">Sẵn sàng đi một vòng chưa?</string>
+    <string name="first_slide_header">Di chuyển chưa bao giờ dễ dàng hơn. Chỉ cần mở ứng dụng và nhập nơi bạn muốn đến và tài xế gần đó sẽ giúp bạn đến đó một cách đáng tin cậy</string>
+    <string name="second_slide_title">Di chuyển dễ dàng hơn với cập nhật theo thời gian thực</string>
+    <string name="second_slide_header">Để có thể có trải nghiệm tốt nhất, xin vui lòng đồng ý cung cấp vị trí khi được yêu cầu</string>
+</resources>

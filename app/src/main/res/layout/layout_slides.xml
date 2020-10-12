@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e2e0f8">
+    <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content" android:layout_height="400dp"
+            android:src="@drawable/onboard_cheers" android:scaleType="fitStart"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/slider_image" app:layout_constraintBottom_toTopOf="@+id/slider_header"/>
+    <TextView
+            android:id="@+id/slider_header"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/first_slide_title"
+            app:layout_constraintStart_toStartOf="@+id/slider_image"
+            android:fontFamily="@font/sfprodisplay_bold"
+            android:textSize="25sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/slider_description" android:layout_marginBottom="16dp"/>
+    <TextView
+            android:id="@+id/slider_description"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:text="@string/first_slide_header" app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/sfprodisplay_light"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="30dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

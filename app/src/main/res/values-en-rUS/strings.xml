@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_phone_number_invalid">Invalid phone number</string>
+    <string name="error_field_empty">%1s can\'t be empty</string>
+    <string name="error_invalid_password">Password is too weak</string>
+    <string name="message_sign_up_sucessful">Sign in successful</string>
+    <string name="message_permission_denied">
+        <![CDATA[<![CDATA[If you reject permission,you can not use this service  Please turn on permissions at [Setting] > [Permission]]]]]></string>
+    <string name="message_verification">Enter your mobile number.</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="message_other_method_login">Or connect with social network</string>
+    <string name="message_data_charge">By continuing you may receive an SMS for verification. Message and data rates may
+        apply
+    </string>
+    <string name="message_internet_connection">Please enable connect to wi-fi or cellular network.</string>
+    <string name="select_country_code">Select country code</string>
+    <string name="australia">Australia</string>
+    <string name="singapore">Singapore</string>
+    <string name="south_korea">South Korea</string>
+    <string name="vietnam">Vietnam</string>
+    <string name="message_welcome">Get moving with Uber</string>
+    <string name="message_enter_phone_number">0912 345 678</string>
+    <string name="message_welcome_back">Welcome back, please enter your password here to continue</string>
+    <string name="message_cant_login">I can\'t log in</string>
+    <string name="message_confirm_information">Please confirm your information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="message_accept_term">By continuing, you agree to our Term of Service and Privacy Policy</string>
+    <string name="choose_an_account">Choose an account</string>
+    <string name="message_social_charge">By clicking on a social option you may receive an SMS for verification. Message
+        and data rates may apply.
+    </string>
+    <string name="tv_skip">Skip</string>
+    <string name="message_change_phone_number">I want to change phone number</string>
+    <string name="message_otp_error">Didn\'t receive the code?</string>
+    <string name="title_verify"><![CDATA[Enter the 6-digit code we sent to you at %1s]]></string>
+    <string name="message_verify_invalid">Invalid verification code</string>
+    <string name="full_name">Enter your name</string>
+    <string name="menu_exit">Sign Out</string>
+    <string name="confirm_exit">Do you really want to sign out?</string>
+    <string name="first_slide_title">Ready for a fantastic ride ?</string>
+    <string name="second_slide_title">Ride easy with real time trip update</string>
+    <string name="first_slide_header">Your destination is at your fingerprint. Just open the app and enter you want to go, and a nearby driver will help you get there reliably</string>
+    <string name="second_slide_header">For a better experience, we need permission to your location. Please provide push notification when prompted</string>
+</resources>
