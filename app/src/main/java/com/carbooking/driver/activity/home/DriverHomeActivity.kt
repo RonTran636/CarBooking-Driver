@@ -18,17 +18,16 @@ import androidx.navigation.ui.setupWithNavController
 import com.carbooking.driver.R
 import com.carbooking.driver.utils.Common
 import com.carbooking.driver.activity.login.LoginSplashActivity
-import com.carbooking.driver.utils.getProgressDrawable
-import com.carbooking.driver.utils.loadImage
+import com.firebase.geofire.GeoFire
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.nav_header_main.*
 
 class DriverHomeActivity : AppCompatActivity() {
 
@@ -65,6 +64,12 @@ class DriverHomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         init()
 
+    }
+
+    override fun onStop() {
+        super.onStop()
+        val geoFire = GeoFire(FirebaseDatabase.getInstance().getReference(Common.DRIVERS_LOCATION_REFERENCE))
+        geoFire.removeLocation(FirebaseAuth.getInstance().currentUser!!.uid)
     }
 
     private fun init() {
@@ -106,7 +111,7 @@ class DriverHomeActivity : AppCompatActivity() {
         tvName.text = Common.buildWelcomeMessage()
         tvPhoneNumber.text = Common.currentUser!!.phoneNumber
         tvStar.text = StringBuilder().append(Common.currentUser!!.rating)
-        img_avatar.loadImage(Common.currentUser!!.photoUrl, getProgressDrawable(img_avatar.context))
+//        img_avatar.loadImage(Common.currentUser!!.photoUrl, getProgressDrawable(img_avatar.context))
 
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

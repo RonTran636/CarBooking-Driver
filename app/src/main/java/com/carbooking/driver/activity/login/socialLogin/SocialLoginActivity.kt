@@ -172,9 +172,6 @@ class SocialLoginActivity : AppCompatActivity() {
     }
 
 
-
-
-
     // [END auth_with_facebook]
     private fun returnTransition(): Transition? {
         val bounds = ChangeBounds()

@@ -73,6 +73,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-database-ktx:19.5.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.google.android.gms:play-services-base:17.4.0'
     implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
     implementation 'com.google.firebase:firebase-dynamic-links:19.1.1'
     implementation 'com.google.android.gms:play-services-ads:19.4.0'

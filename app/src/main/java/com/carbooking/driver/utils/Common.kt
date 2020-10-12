@@ -57,8 +57,8 @@ object Common {
     const val NOTIFICATION_CHANNEL_ID = "private_channel"
     const val NOTI_BODY:String = "Body"
     const val NOTI_TITLE: String = "Title"
-    const val TOKEN_REFERENCE: String = "Token"
+    const val TOKEN_REFERENCE: String = "DriversToken"
     var currentUser : UserModel? = null
     const val DRIVERS_LOCATION_REFERENCE :String = "DriversLocation"
-    const val DRIVER_INFO_REFERENCE :String = "DriverInfo"
+    const val DRIVER_INFO_REFERENCE :String = "DriversInfo"
 }

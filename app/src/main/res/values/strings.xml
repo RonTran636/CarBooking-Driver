@@ -11,7 +11,8 @@
     <string name="error_invalid_password">Password is too weak</string>
     <string name="message_sign_up_successful">Sign in successful</string>
     <string name="message_permission_denied">
-        If you reject permission,you can not use this service  Please turn on permissions at [Setting] > [Permission]</string>
+        If you reject permission,you can not use this service Please turn on permissions at [Setting] > [Permission]
+    </string>
     <string name="message_verification">Enter your mobile number.</string>
     <string name="phone_number">Phone Number</string>
     <string name="message_other_method_login">Or connect with social network</string>
@@ -56,9 +57,17 @@
     <string name="confirm_exit">Do you really want to sign out?</string>
     <string name="first_slide_title">Ready for a fantastic ride ?</string>
     <string name="second_slide_title">Ride easy with real time trip update</string>
-    <string name="first_slide_header">Your destination is at your fingerprint. Just open the app and enter you want to go, and a nearby driver will help you get there reliably</string>
-    <string name="second_slide_header">For a better experience, we need permission to your location. Please provide push notification when prompted</string>
+    <string name="first_slide_header">Your destination is at your fingerprint. Just open the app and enter you want to
+        go, and a nearby driver will help you get there reliably
+    </string>
+    <string name="second_slide_header">For a better experience, we need permission to your location. Please provide push
+        notification when prompted
+    </string>
     <string name="rationale_title">Permission required</string>
     <string name="rationale_message">
-        <![CDATA[We need permission to access your Location]]></string>
+        To continue, turn on device location, which uses Google\'s location service.
+    </string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

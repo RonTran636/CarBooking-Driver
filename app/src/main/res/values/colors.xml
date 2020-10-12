@@ -317,4 +317,6 @@
 
     <color name="selected_dot">#2D9CDB</color>
     <color name="idle_dot">#662D9CDB</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

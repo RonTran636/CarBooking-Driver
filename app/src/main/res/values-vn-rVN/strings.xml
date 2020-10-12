@@ -42,5 +42,5 @@
     <string name="second_slide_header">Để có thể có trải nghiệm tốt nhất, xin vui lòng đồng ý cung cấp vị trí khi được yêu cầu</string>
     <string name="rationale_title">Permission required</string>
     <string name="rationale_message">
-        <![CDATA[We need permission to access your Location]]></string>
+        Để tiếp tục, vui lòng chia sẻ vị trí của thiết bị, thông qua dịch vụ của Google</string>
 </resources>

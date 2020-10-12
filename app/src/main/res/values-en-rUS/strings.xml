@@ -44,5 +44,5 @@
     <string name="second_slide_header">For a better experience, we need permission to your location. Please provide push notification when prompted</string>
     <string name="rationale_title">Permission required</string>
     <string name="rationale_message">
-        <![CDATA[We need permission to access your Location]]></string>
+        To continue, turn on device location, which uses Google\'s location service.</string>
 </resources>

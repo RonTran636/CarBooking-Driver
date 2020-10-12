@@ -1,19 +1,24 @@
 package com.carbooking.driver.activity.splash
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.carbooking.driver.R
+import com.carbooking.driver.activity.home.DriverHomeActivity
+import com.carbooking.driver.activity.login.LoginSplashActivity
 import com.carbooking.driver.activity.onboarding.OnBoardingActivity
 import com.carbooking.driver.databinding.ActivitySplashBinding
-import com.carbooking.driver.utils.Common
-import com.carbooking.driver.activity.home.DriverHomeActivity
 import com.carbooking.driver.model.UserModel
+import com.carbooking.driver.utils.Common
 import com.carbooking.driver.utils.UserUtils
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var listener: FirebaseAuth.AuthStateListener
 
-    private lateinit var database :FirebaseDatabase
+    private lateinit var database: FirebaseDatabase
     private lateinit var userInfoRef: DatabaseReference
     private val handler by lazy { Handler(Looper.myLooper()!!) }
 
@@ -35,41 +40,63 @@ class SplashActivity : AppCompatActivity() {
         private const val RC_SIGN_IN = 123
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MobileAds.initialize(this) { }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
-        delaySplashScreen()
+        init()
     }
 
-
+    @SuppressLint("CheckResult")
     override fun onStart() {
         super.onStart()
+        if (auth.currentUser != null) {
+            //Registered user - move to Home Page
+            checkUserFromFirebase()
+        } else {
+            //New user detected:
+            //Check permission:
+            when (PackageManager.PERMISSION_GRANTED) {
+                ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) -> {
+                    handler.postDelayed({
+                        startActivity(Intent(this@SplashActivity, LoginSplashActivity::class.java))
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                        finish()
+                    },500)
+                }
+                else -> {
+                    handler.postDelayed({
+                        startActivity(Intent(this@SplashActivity, OnBoardingActivity::class.java))
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                        finish()
+                    },500)
+                }
+            }
+        }
     }
 
     private fun checkUserFromFirebase() {
-        auth.addAuthStateListener(listener)
         userInfoRef
             .child(auth.currentUser!!.uid)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val model = snapshot.getValue(UserModel::class.java)
                     Common.currentUser = model
+                    handler.postDelayed({
                     startActivity(Intent(this@SplashActivity, DriverHomeActivity::class.java))
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
+                    },500)
                 }
+
                 override fun onCancelled(error: DatabaseError) {
                     Log.e(TAG, "onCancelled: ${error.message}")
                 }
             })
-    }
-
-
-    private fun delaySplashScreen() {
-        handler.postDelayed({
-            init()
-        }, 1000)
     }
 
     private fun init() {
@@ -85,13 +112,8 @@ class SplashActivity : AppCompatActivity() {
                     .addOnSuccessListener { instanceIdResult ->
                         UserUtils.updateToken(this@SplashActivity, instanceIdResult.token)
                     }
-                checkUserFromFirebase()
-            } else {
-                //New user detected - Move to LoginActivity
-                startActivity(Intent(this@SplashActivity, OnBoardingActivity::class.java))
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                finish()
             }
         }
+        auth.addAuthStateListener(listener)
     }
 }

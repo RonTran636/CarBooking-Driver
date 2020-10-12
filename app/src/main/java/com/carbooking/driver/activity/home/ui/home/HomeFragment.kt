@@ -1,14 +1,21 @@
 package com.carbooking.driver.activity.home.ui.home
 
+import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.res.Resources
+import android.location.LocationManager
 import android.os.Bundle
 import android.os.Looper
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.carbooking.driver.R
@@ -50,7 +57,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
                 currentUserRef.onDisconnect().removeValue()
             }
         }
-
         override fun onCancelled(error: DatabaseError) {
             Snackbar.make(mapFragment.requireView(), error.message, Snackbar.LENGTH_LONG).show()
         }
@@ -72,8 +78,8 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
         mapFragment = childFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+        statusCheck()
         return root
-
     }
 
     private fun init() {
@@ -122,7 +128,7 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
 
     override fun onDestroy() {
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)
-        geoFire.removeLocation(FirebaseAuth.getInstance().currentUser!!.uid)
+
         onlineRef.removeEventListener(onlineValueEventListener)
         super.onDestroy()
     }
@@ -170,6 +176,21 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
             if (!success) Log.e(TAG, "onMapReady: Style Parsing Error")
         } catch (e: Resources.NotFoundException) {
             Log.e(TAG, "onMapReady: ${e.message}")
+        }
+    }
+
+    private fun statusCheck() {
+        val manager: LocationManager = context!!.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            val builder= AlertDialog.Builder(this.context!!)
+            builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("OK"
+                ) { _, _ -> startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)) }
+                .setNegativeButton("CANCEL"
+                ) { dialog, _ -> dialog.cancel() }
+            val alert: AlertDialog = builder.create()
+            alert.show()
         }
     }
 }
