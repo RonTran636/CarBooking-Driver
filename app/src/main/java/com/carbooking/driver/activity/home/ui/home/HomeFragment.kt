@@ -158,6 +158,16 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
         } catch (e: Resources.NotFoundException) {
             Log.e(TAG, "onMapReady: ${e.message}")
         }
+
+        if (resources.getBoolean(R.bool.isNightMode)) {
+            val success = mMap.setMapStyle(
+                MapStyleOptions.loadRawResourceStyle(
+                    context, R.raw.map_night
+                )
+            )
+            if (!success)
+                Log.e("MapsActivityRaw", "Style parsing failed.")
+        }
     }
 
     private fun statusCheck() {

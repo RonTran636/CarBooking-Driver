@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.carbooking.driver.R
 import com.carbooking.driver.activity.home.DriverHomeActivity
-import com.carbooking.driver.databinding.ActivitySignUpBinding
-import com.carbooking.driver.utils.Common
 import com.carbooking.driver.activity.login.LoginActivity
+import com.carbooking.driver.databinding.ActivitySignUpBinding
 import com.carbooking.driver.model.DriverModel
+import com.carbooking.driver.utils.Common
 import com.carbooking.driver.utils.HashUtils
 import com.facebook.login.LoginManager
 import com.google.android.material.textfield.TextInputLayout

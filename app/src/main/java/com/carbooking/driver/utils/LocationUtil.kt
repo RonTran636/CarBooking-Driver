@@ -6,10 +6,10 @@ import android.location.Geocoder
 import android.location.Location
 import android.text.TextUtils
 import java.io.IOException
-import java.lang.StringBuilder
 import java.util.*
 
 object LocationUtil {
+
     fun getAddressFromLocation(context: Context?, location: Location):String {
         val result = StringBuilder()
         val geocoder = Geocoder(context, Locale.getDefault())

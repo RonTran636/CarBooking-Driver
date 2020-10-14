@@ -59,6 +59,10 @@ object Common {
     const val DRIVER_INFO_REFERENCE :String = "DriversInfo"
     const val TOKEN_REFERENCE: String = "DriversToken"
 
+    const val RIDERS = "Riders"
+    const val RIDERS_LOCATION_REFERENCE :String = "RidersLocation"
+    const val RIDERS_INFO_REFERENCE :String = "RidersInfo"
+
     const val NOTIFICATION_CHANNEL_ID = "private_channel"
     const val NOTI_BODY:String = "Body"
     const val NOTI_TITLE: String = "Title"
